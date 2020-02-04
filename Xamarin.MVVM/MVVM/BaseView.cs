@@ -1,32 +1,34 @@
 ﻿using System.Threading;
+using Autofac;
 using Xamarin.Forms;
+using Xamarin.MVVM.Core.Infrastructure;
 using Xamarin.MVVM.Core.MVVM;
 
 namespace Xamarin.MVVM.MVVM
 {
-    public class BaseView<T> : ContentPage where T : BaseViewModel, new()
+    public class BaseView<T> : ContentPage where T : BaseViewModel
     {
-        //private readonly T _viewModel;
+        private readonly T _viewModel;
 
         private long _initialized;
 
-        //public T ViewModel
-        //{
-        //    get => _viewModel;
-        //}
+        public T ViewModel
+        {
+            get => _viewModel;
+        }
 
-        public T ViewModel { get; protected set; } = new T();
+        //public T ViewModel { get; protected set; } = new T();
 
         /// <summary>
         /// Initializes a new instance of the BaseView class.
         /// </summary>
         public BaseView()
         {
-            //TODO: Add DI here
+            _viewModel = AppContainer.Container.Resolve<T>();
 
             NavigationPage.SetBackButtonTitle(this, "Back");
 
-            BindingContext = ViewModel;
+            BindingContext = _viewModel;
 
             Title = ViewModel.Title;
         }
