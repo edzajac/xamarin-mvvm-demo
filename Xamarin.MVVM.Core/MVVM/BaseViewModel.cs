@@ -9,7 +9,7 @@ namespace Xamarin.MVVM.Core.MVVM
     public class BaseViewModel : INotifyPropertyChanged, IViewModel
     {
         private bool _isBusy;
-        private string _title;
+        private string _title = string.Empty;
 
         public event PropertyChangedEventHandler PropertyChanged;
 

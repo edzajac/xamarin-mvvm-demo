@@ -4,16 +4,18 @@ using Xamarin.MVVM.Core.MVVM;
 
 namespace Xamarin.MVVM.MVVM
 {
-    public class BaseView<T> : ContentPage where T : BaseViewModel
+    public class BaseView<T> : ContentPage where T : BaseViewModel, new()
     {
-        private readonly T _viewModel;
+        //private readonly T _viewModel;
 
         private long _initialized;
 
-        public T ViewModel
-        {
-            get => _viewModel;
-        }
+        //public T ViewModel
+        //{
+        //    get => _viewModel;
+        //}
+
+        public T ViewModel { get; protected set; } = new T();
 
         /// <summary>
         /// Initializes a new instance of the BaseView class.
@@ -24,7 +26,7 @@ namespace Xamarin.MVVM.MVVM
 
             NavigationPage.SetBackButtonTitle(this, "Back");
 
-            BindingContext = _viewModel;
+            BindingContext = ViewModel;
 
             Title = ViewModel.Title;
         }

@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-
-using Xamarin.Forms;
+﻿using Xamarin.MVVM.Core.ViewModels;
+using Xamarin.MVVM.MVVM;
 
 namespace Xamarin.MVVM.Views
 {
-    public partial class MainPageView : ContentPage
+    public partial class MainPageView : BaseView<MainPageViewModel>
     {
         public MainPageView()
         {
