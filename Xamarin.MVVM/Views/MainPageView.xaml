@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<mvvm:BaseView xmlns="http://xamarin.com/schemas/2014/forms"
+               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               xmlns:mvvm="clr-namespace:Xamarin.MVVM.MVVM"
+               xmlns:vm="clr-namespace:Xamarin.MVVM.Core.ViewModels;assembly=Xamarin.MVVM.Core"
+               x:Class="Xamarin.MVVM.Views.MainPageView"
+               x:TypeArguments="vm:MainPageViewModel">
+    <ContentPage.Content>
+        <Label Text="Welcome to Xamarin.Forms!"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"/>
+        </ContentPage.Content>
+</mvvm:BaseView>
