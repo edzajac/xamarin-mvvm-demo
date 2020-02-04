@@ -8,6 +8,8 @@
     <Folder Include="MVVM\" />
     <Folder Include="ViewModels\" />
     <Folder Include="Infrastructure\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Autofac" Version="5.0.0" />
