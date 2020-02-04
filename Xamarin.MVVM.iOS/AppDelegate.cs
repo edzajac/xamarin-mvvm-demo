@@ -23,7 +23,10 @@ namespace Xamarin.MVVM.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
-            LoadApplication(new App());
+
+            var appSetup = new Infrastructure.Setup();
+
+            LoadApplication(new App(appSetup));
 
             return base.FinishedLaunching(app, options);
         }
