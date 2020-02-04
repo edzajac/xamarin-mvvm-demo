@@ -6,7 +6,7 @@
                x:Class="Xamarin.MVVM.Views.MainPageView"
                x:TypeArguments="vm:MainPageViewModel">
     <ContentPage.Content>
-        <Label Text="Welcome to Xamarin.Forms!"
+        <Label Text="{Binding WelcomeText}"
                HorizontalOptions="Center"
                VerticalOptions="Center"/>
         </ContentPage.Content>

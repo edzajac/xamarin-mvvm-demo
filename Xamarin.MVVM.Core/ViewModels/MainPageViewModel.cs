@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using System.Threading.Tasks;
-using Xamarin.MVVM.Core.MVVM;
+﻿using Xamarin.MVVM.Core.MVVM;
 
 namespace Xamarin.MVVM.Core.ViewModels
 {
     public class MainPageViewModel : BaseViewModel
     {
-
+        public string WelcomeText => "Welcome to Xamarin.Forms!";
 
     }
 }
