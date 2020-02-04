@@ -1,12 +1,15 @@
 ﻿using Xamarin.Forms;
+using Xamarin.MVVM.Core.Infrastructure;
 using Xamarin.MVVM.Views;
 
 namespace Xamarin.MVVM
 {
     public partial class App : Application
     {
-        public App()
+        public App(AppSetup setup)
         {
+            AppContainer.Container = setup.CreateContainer();
+
             InitializeComponent();
 
             MainPage = new NavigationPage(new MainPageView());
